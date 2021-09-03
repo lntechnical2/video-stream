@@ -12,7 +12,6 @@ VIDEO_CALL = {}
 
 
 @Client.on_message(filters.command("vstream"))
-@authorized_users_only
 async def stream(client, m: Message):
     replied = m.reply_to_message
     if not replied:
@@ -45,7 +44,6 @@ async def stream(client, m: Message):
         await m.reply("🔺 **please reply to a video or video file!**")
 
 @Client.on_message(filters.command("vstop"))
-@authorized_users_only
 async def stopvideo(client, m: Message):
     chat_id = m.chat.id
     try:
